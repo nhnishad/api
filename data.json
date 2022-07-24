@@ -1,6 +1,33 @@
-[{
-    "src": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi3BKbD0doCvUYzSsqHKDY-rb1BmOG_HeQu0vLpF37t_x20pkztDLGT7AdzD7mYRlhZ5QvS9xpOdwu9grljV3-DlRJkMO7KWM4e1EhfZDgm8hvt6wksdjxX2UtIe7cqI5LK6SO2RgJJaHIALeDZV4ay1vzmp2rLkL-g-3QkmFSJsvmX8WaZk4It-pp2/s300/nhnishad-02.jpeg",
-    "alt": "photo retouch"
- }
+const img = document.querySelector('.grid');
+const loader = document.querySelector('#gallery_anim');
 
-]
+window.addEventListener('load', () => {
+  img.style.display = 'block';
+  img.style.opacity = '1';
+  loader.style.display = 'none';
+  setTimeout(() => {
+    getPost();
+  }, 300);
+});
+
+// json
+
+
+const getPost = async () => {
+  const response = await fetch(`https://nhnishad.github.io/api/data.json`);
+  const data = await response.json();
+
+  data.map((curElm, index) => {
+    let imgSrc = `${curElm.src}`;
+    let imgAlt = `${curElm.alt}`;
+
+    const htmlData = `
+    <div class="grid-item">
+     <img src='${imgSrc}' alt='${imgAlt}'/>
+    </div>
+    `;
+    img.insertAdjacentHTML('beforeend', htmlData);
+  });
+
+
+}
