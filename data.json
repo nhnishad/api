@@ -1,33 +1,22 @@
-const img = document.querySelector('.grid');
-const loader = document.querySelector('#gallery_anim');
+[{
+    "src": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi3BKbD0doCvUYzSsqHKDY-rb1BmOG_HeQu0vLpF37t_x20pkztDLGT7AdzD7mYRlhZ5QvS9xpOdwu9grljV3-DlRJkMO7KWM4e1EhfZDgm8hvt6wksdjxX2UtIe7cqI5LK6SO2RgJJaHIALeDZV4ay1vzmp2rLkL-g-3QkmFSJsvmX8WaZk4It-pp2/s1000/nhnishad-02.jpeg",
+    "alt": "Portrait Retouch"
+  },
+  {
+    "src": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgs8yMGUmsZ9e_CHbE9IelCQef9MO4PPAryldCjOC_aibsO1_epYtSBwxAqlUUi-Cd54frkWoDfyEtwuwuLRHohorsk0bd_tV_37pxUkjZJex9buMLO_zKfyyWqEF_4TBSVQiMWrZeERCV8Q6XQS_-1jHwW9mCZ4U6-40q7j6kJ0f9Y11lYRTrsV8_B/s1000/lemon.jpg",
+    "alt": "lemon tea"
+  },
+  {
+    "src": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEibHVLbiNKGxVhY7kMle08mPkiNmnRHQcuG_aJDG4dF8csvBFKhkVol2XFehLMCbAzjlO4wuQQUJhB597mgqbcGLNnQDwmdldZCt6f6gXm3IKDXIFw4jhHh8O3mC-gSMVbCGez1mDiMZQ_RqgvjfUB8FyVn4Ud7rQG9OrXGJGhPaRmOCKs3aNQJpF4S/s1000/burger.jpg",
+    "alt": "Burger Post Design"
+  },
+  {
+    "src": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhiNS_gXPlMTl14HoyXstex1rgyP-7ZeAffJcaAUD_ZhhxlS6vtveEriynSiNviGbkXTrqkHUSp6uIYXhzDhyeIvCZphyZ0Fgpmbijc8jzd87AALY7LuH0wReagBl1tDIxyfiHt-MI0W4xFzFVI8aix6PaR39AWZj-n43e7zKbDEkOUbljtfUtVHFoN/s1000/after.jpeg",
+    "alt": "Nsb Picture"
+  },
+  {
+    "src": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjtBfeyUilQ-KCs8YXYKk8FyzCUemAdOmxoQX6UkCWDuig5Nas0zxuK74k5JrfoJSGqq6u_bzVOh3e6GONAnaD2dRLYRcvyj6KWNh69oaY-FRN5eYPLyM04An0gd42OuTd4UnTUlXz-zLZIN2XatuWP3oRctza8yUp4dyHoXCUBhhgNso3Qt-8PEDqs/s1000/winterev.jpg",
+    "alt": "winter Poster"
+  }
 
-window.addEventListener('load', () => {
-  img.style.display = 'block';
-  img.style.opacity = '1';
-  loader.style.display = 'none';
-  setTimeout(() => {
-    getPost();
-  }, 300);
-});
-
-// json
-
-
-const getPost = async () => {
-  const response = await fetch(`https://nhnishad.github.io/api/data.json`);
-  const data = await response.json();
-
-  data.map((curElm, index) => {
-    let imgSrc = `${curElm.src}`;
-    let imgAlt = `${curElm.alt}`;
-
-    const htmlData = `
-    <div class="grid-item">
-     <img src='${imgSrc}' alt='${imgAlt}'/>
-    </div>
-    `;
-    img.insertAdjacentHTML('beforeend', htmlData);
-  });
-
-
-}
+]
